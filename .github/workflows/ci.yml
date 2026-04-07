@@ -7,7 +7,7 @@ on:
     branches: [master]
  
 env:
-  REGISTRY: ghcr.io
+  REGISTRY: ghcr.io # referring to github ci/cd server
   IMAGE_NAME: ${{ github.repository }}/api
  
 jobs:

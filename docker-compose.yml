@@ -18,8 +18,8 @@ services:
       DB_PORT:     5432
     depends_on:
       db:
-        condition: service_healthy   # wait for DB ready
-    networks:
+        condition: service_healthy   # wait for DB ready (you will need a database before your backend)
+    networks: # making sure the database and api are talking to each other (in docker they are stored inside different containers, need to build a virtual connection between them)
       - backend
  
   # The Database
@@ -45,7 +45,7 @@ services:
 volumes:
   pgdata:
  
-# Networks
+# Networks (telling how networking is done)
 networks:
   backend:
     driver: bridge
